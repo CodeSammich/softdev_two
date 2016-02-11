@@ -12,11 +12,14 @@ function circle(event) {
     var mouseY = event.offsetY;
 
     console.log(mouseX);
+    console.log(mouseY);
     
     ctx.fillStyle = "#00868B";
+    
     ctx.beginPath();
-    ctx.arc( mouseX, mouseY, 25, 0, 2*Math.Pi );
-    ctx.fill();
+    ctx.fillRect( mouseX, mouseY, 25, 25 );
+//    ctx.arc( mouseX, mouseY, 25, 0, 2*Math.Pi, false );
+    ctx.stroke();
     ctx.closePath();
 }
 
