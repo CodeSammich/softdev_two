@@ -15,11 +15,11 @@ btn.addEventListener( "click", clear );
 var prev_mouseX, prev_mouseY;
 
 function circle(event) {
-    console.log("circle!");
+   // console.log("circle!");
     var mouseX = event.offsetX;
     var mouseY = event.offsetY;
-    console.log(mouseX);
-    console.log(mouseY);
+    //console.log(mouseX);
+   // console.log(mouseY);
     
     ctx.fillStyle = "#00868B";
     ctx.strokeStyle = "#00868B";
@@ -28,11 +28,15 @@ function circle(event) {
     if(numberOfCircles > 0) {
 	ctx.moveTo( prev_mouseX, prev_mouseY );
 	ctx.lineTo( mouseX, mouseY );
+	ctx.stroke();
+	ctx.closePath();
+
+	ctx.beginPath();
     }
     prev_mouseX = mouseX;
     prev_mouseY = mouseY;
     
-    ctx.arc( mouseX, mouseY, 50, 0, 2*Math.PI );
+    ctx.arc( mouseX, mouseY, 25, 0, 2*Math.PI );
     ctx.fill();
     
     ctx.closePath();
@@ -44,6 +48,8 @@ function clear(event) {
     
     ctx.fillStyle = "#66cccc";
     ctx.fillRect( 0, 0, 500, 500 );
+
+    numberOfCircles = 0;
 }
 
 
