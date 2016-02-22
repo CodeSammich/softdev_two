@@ -20,14 +20,16 @@ var growing = true;
 
 function growCircle() {
     if( growing )
-	radius += 2;
+	radius++;
     else {
-	radius -= 2;
+	radius--;
 	clear();
 	ctx.fillStyle = "#00868B";
     }
-    if( radius == (c.width / 2))
+    if( radius == (c.width / 2)) {
 	growing = false;
+//	ctx.strokeStyle = "#66cccc";
+    }
     else if( radius == 0) {
 	growing = true;
 	ctx.strokeStyle = "#00868B";
@@ -38,8 +40,15 @@ function growCircle() {
     ctx.stroke();
     ctx.fill();
 
-    window.requestAnimationFrame( growCircle );
+    requestId = window.requestAnimationFrame( growCircle );
 
+}
+
+function stop() {
+    if( requestId ) {
+	window.cancelAnimationFrame( requestId );
+	requestId = undefined;
+    }
 }
 
 /*
