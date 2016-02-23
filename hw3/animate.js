@@ -5,15 +5,14 @@ var ctx = c.getContext( "2d" ); //context
 ctx.fillStyle = "#66cccc"; //canvas color
 ctx.fillRect( 0, 0, 500, 500 );
 
-var radius = 0;
-var growing = true;
+var x = ctx.width / 2;
+var y = ctx.width / 2;
+var right = true;
+var down = true;
+var moving = true;
+var logo = new Image();
+logo.src = "logo_dvd.jpg";
 
-/*
-  var logo = new Image();
-  logo.src = "filename";
-
-  ctx.drawImage( logo, x, y, w, h);
-*/
 var clear = function(){
     console.log("clear");
     
@@ -21,9 +20,32 @@ var clear = function(){
     ctx.fillRect( 0, 0, 500, 500 );
     
     ctx.fillStyle = "#00868B";
-    
-//    numberOfCircles = 0;
 };
+
+function dvd() {
+    console.log("dvd");
+    
+    if( x == 0 || x == ctx.width )
+	right = !right;
+    if( y == 0 || y == ctx.height )
+	down = !down;
+    
+    if( moving ) {
+	if( right )
+	    x++;
+	else
+	    x--;
+	if( down )
+	    y--;
+	else
+	    y++;
+    } else
+	break;
+
+    ctx.drawImage( logo, x, y, 100, 50 );
+    
+    requestId = window.requestAnimationFrame( dvd );
+}
 
 /*
 function growCircle() {
@@ -86,11 +108,12 @@ clearBtn.addEventListener( "click", clear );
 var stopBtn = document.getElementById( "stop" );
 stopBtn.addEventListener( "click", stop );
 
+/*
 // Circle
 ctx.fillStyle = "#00868B";
 ctx.strokeStyle = "#00868B"; //shape color on canvas
-
-c.addEventListener( "click", growCircle );
+*/
+c.addEventListener( "click", dvd );
 
 
 
