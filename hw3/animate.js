@@ -25,6 +25,7 @@ var clear = function(){
 //    numberOfCircles = 0;
 };
 
+/*
 function growCircle() {
     ctx.fillStyle = "#00868B";
 
@@ -50,6 +51,7 @@ function growCircle() {
     requestId = window.requestAnimationFrame( growCircle );
 
 }
+*/
 
 function stop() {
     if(requestId) {
