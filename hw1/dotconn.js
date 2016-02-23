@@ -5,26 +5,34 @@ var ctx = c.getContext( "2d" ); //context
 ctx.fillStyle = "#66cccc"; //canvas color
 ctx.fillRect( 0, 0, 500, 500 );
 
-//Circle generator
-c.addEventListener( "click", growCircle );
-
-// Clear button 
-var btn = document.getElementById( "clear" );
-btn.addEventListener( "click", clear );
-
-ctx.fillStyle = "#00868B";
-ctx.strokeStyle = "#00868B"; //shape color on canvas
-
 var radius = 0;
 var growing = true;
 
+/*
+  var logo = new Image();
+  logo.src = "filename";
+
+  ctx.drawImage( logo, x, y, w, h);
+*/
+var clear = function(){
+    console.log("clear");
+    
+    ctx.fillStyle = "#66cccc";
+    ctx.fillRect( 0, 0, 500, 500 );
+    
+    ctx.fillStyle = "#00868B";
+    
+//    numberOfCircles = 0;
+};
+
 function growCircle() {
+    ctx.fillStyle = "#00868B";
+
     if( growing )
 	radius++;
     else {
 	radius--;
 	clear();
-	ctx.fillStyle = "#00868B";
     }
     if( radius == (c.width / 2)) {
 	growing = false;
@@ -32,7 +40,6 @@ function growCircle() {
     }
     else if( radius == 0) {
 	growing = true;
-	ctx.strokeStyle = "#00868B";
     }
 
     ctx.beginPath();
@@ -45,9 +52,9 @@ function growCircle() {
 }
 
 function stop() {
-    if( requestId ) {
+    if(requestId) {
 	window.cancelAnimationFrame( requestId );
-	requestId = undefined;
+	reuqestId = undefined;
     }
 }
 
@@ -68,14 +75,21 @@ function circle(event) {
 }
 */
 
-function clear(event) {
-    console.log("clear");
-    
-    ctx.fillStyle = "#66cccc";
-    ctx.fillRect( 0, 0, 500, 500 );
+/* Buttons */
+// Clear button 
+var clearBtn = document.getElementById( "clear" );
+clearBtn.addEventListener( "click", clear );
 
-    numberOfCircles = 0;
-}
+// Stop button
+var stopBtn = document.getElementById( "stop" );
+stopBtn.addEventListener( "click", stop );
+
+// Circle
+ctx.fillStyle = "#00868B";
+ctx.strokeStyle = "#00868B"; //shape color on canvas
+
+c.addEventListener( "click", growCircle );
+
 
 
 
