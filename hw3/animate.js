@@ -5,8 +5,8 @@ var ctx = c.getContext( "2d" ); //context
 ctx.fillStyle = "#66cccc"; //canvas color
 ctx.fillRect( 0, 0, 500, 500 );
 
-var x = ctx.width / 2;
-var y = ctx.width / 2;
+var x = 250;
+var y = 250;
 var right = true;
 var down = true;
 var moving = true;
@@ -23,11 +23,11 @@ var clear = function(){
 };
 
 function dvd() {
-    console.log("dvd");
+    console.log("dvd" + x);
     
-    if( x == 0 || x == ctx.width )
+    if( x == 0 || x == 400 )
 	right = !right;
-    if( y == 0 || y == ctx.height )
+    if( y == 0 || y == 450 )
 	down = !down;
     
     if( moving ) {
@@ -39,9 +39,9 @@ function dvd() {
 	    y--;
 	else
 	    y++;
-    } else
-	break;
+    }
 
+    clear();
     ctx.drawImage( logo, x, y, 100, 50 );
     
     requestId = window.requestAnimationFrame( dvd );
