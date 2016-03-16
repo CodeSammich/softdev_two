@@ -1,39 +1,19 @@
-var pic = document.getElementById( "vimage" );
+var svg = document.getElementById( "vimage" );
 
 var radius = 25;
 var growing = false;
 
-/*
+
 var clear = function(){
     console.log("clear");
     
     var c = document.createElementNS( "http://www.w3.org/2000/svg", "rectangle");
-    c.setAttribute( "rx", 0);
-    c.setAttribute( "ry", 0);
-    c.setAttribute( "r", 500);
-    c.setAttribute( "fill", "#66cccc");
-    c.setAttribute( "stroke", "black");
-
+    var lc = svg.lastChild;
+    for(; lc ;lc=svg.lastChild){
+	lc.remove();
+    }
 };
-*/
 
-var grow = function(e) {
-    if( growing )
-	radius++;
-    else {
-	radius--;
-	clear();
-    }
-    if( radius == (pic.width / 2)) {
-	growing = false;
-    }
-    else if( radius == 0 ) {
-	growing = true;
-    }
-
-    drawDot( e.offsetX, e.offsetY, radius );
-    requestId = window.requestAnimationFrame( grow );
-}
 
 var change = function(e) {
     e.preventDefault();
@@ -50,7 +30,7 @@ var drawDot = function(x, y, r) {
     c.setAttribute( "fill", "red" );
     c.setAttribute( "stroke", "black" );
     c.addEventListener( "click", change );
-    pic.appendChild( c );
+    svg.appendChild( c );
 };
 
 var clicked = function(e) {
@@ -59,4 +39,5 @@ var clicked = function(e) {
     }
 }
 
-pic.addEventListener( "click", clicked );
+svg.addEventListener( "click", clicked );
+document.addEventListener( "click", clear );
