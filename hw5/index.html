@@ -4,13 +4,27 @@
   <head>
     <meta charset="UTF-8">
     <title> Quick Page </title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
   </head>
   
   <body>
-    <h1> Histogram </h1>
+    <h1> 2016 Presidential Delegates (Pledged) </h1>
     <style>
-      .chart div {
-      font: 10px sans-serif;
+      .republican div {
+      font: 20px sans-serif;
+      background-color: red;
+      text_align: left
+      padding: 3px;
+      margin: 1px;
+      color: white;
+      }
+    </style>
+ 
+    <style>
+      .democrat div {
+      font: 20px sans-serif;
       background-color: steelblue;
       text_align: left
       padding: 3px;
@@ -19,30 +33,32 @@
       }
     </style>
 
-<!--
-    <div class="chart">
-      <div style="width: 40px;"> 4 </div>
-      <div style="width: 80px;"> 8 </div>
-      <div style="width: 150px;"> 15 </div>
-      <div style="width: 150px;"> 16</div>
-      <div style="width: 230px;"> 23 </div>
-      <div style="width: 430px;"> 43 </div>
-
+    
+    <img height="100" width="100" src="http://media-2.web.britannica.com/eb-media/66/450x450x122266-004-4FE286BB.jpg.pagespeed.ic.ufdxxB-6nb.jpg">
+    
+    <div class="republican">
+      <div style="width: 673px;"> Donald Trump: 673 </div>
+      <div style="width: 410px;"> Ted Cruz: 410 </div>
+      <div style="width: 169px;"> Marco Rubio (Dropped out): 169 </div>
+      <div style="width: 143px;"> John Kasich: 143</div>
     </div>
--->
 
-<div class="chart">
-  
-</div>
+   <img height="100" width="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/U.S._Democratic_Party_logo_(transparent).svg/2000px-U.S._Democratic_Party_logo_(transparent).svg.png">
+    
+    <div class="democrat">
+      <div style="width: 1138px;"> Hillary Clinton: 1139 </div>
+      <div style="width: 825px;"> Bernie #feelthebern Sanders: 825 </div>
+    </div>
+    
+<!-- <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"> </script> -->
 
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"> </script>
-
+<!--
 <script>
   var f = d3.scale.linear()
   .domain([0, d3.max(data)]
   .range([0, 420]));
   
-  var data = [4, 8, 15, 16, 23, 42];
+  var data = [1,139, 825, 673, 410, 169, 143];
   
   d3.select(".chart")
   .selectAll("div")
@@ -54,6 +70,7 @@
   .text(function(d) { return d; });
   
 </script>
+-->
 
   </body>
   
