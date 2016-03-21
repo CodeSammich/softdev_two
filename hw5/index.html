@@ -1,97 +1,33 @@
-<!DOCTYPE HTML>
+<DOCTYPE html>
 
-<html>
   <head>
-    <meta charset="UTF-8">
-    <title> 2016 Presidential Delegates </title>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    
+    <meta charset='utf-8'>
+    <link rel='stylesheet' type='text/css' href='./css/style.css'>
+    <title>Democratic Delegates</title>
   </head>
-  
+
   <body>
-    <h1> 2016 Presidential Delegates (Pledged) </h1>
-    <style>
-      .republican div {
-      font: 20px sans-serif;
-      background-color: red;
-      text_align: left
-      padding: 3px;
-      margin: 1px;
-      color: white;
-      }
-    </style>
- 
-    <style>
-      .democrat div {
-      font: 20px sans-serif;
-      background-color: steelblue;
-      text_align: left
-      padding: 3px;
-      margin: 1px;
-      color: white;
-      }
-    </style>
+    <h1>Democratic Delegates by State</h1>
+    <b>Total Delegates: 4,763</b> <br>
+    <b>Key: Allotted = steel blue, unallocated = blue</b>
 
-    
-    <img height="100" width="100" src="http://media-2.web.britannica.com/eb-media/66/450x450x122266-004-4FE286BB.jpg.pagespeed.ic.ufdxxB-6nb.jpg">
-    
-    <div class="republican">
-      <div style="width: 673px;"> Donald Trump: 673 </div>
-      <div style="width: 410px;"> Ted Cruz: 410 </div>
-      <div style="width: 169px;"> Marco Rubio (Dropped out): 169 </div>
-      <div style="width: 143px;"> John Kasich: 143</div>
+    <div class='allotted'>
     </div>
 
-    <br> <b> Total number of delegates: 2472 </b> <br>
-    <b> Number left: 1077 </b> <br> <br>
-    
-   <img height="100" width="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/U.S._Democratic_Party_logo_(transparent).svg/2000px-U.S._Democratic_Party_logo_(transparent).svg.png">
-    
-    <div class="democrat">
-      <div style="width: 1138px;"> Hillary Clinton: 1139 </div>
-      <div style="width: 825px;"> Bernie #feelthebern Sanders: 825 </div>
+    <div class='unallocated'>
     </div>
 
-   <br> <b> Total number of delegates: 4763 </b> <br>
-    <b> Number left: 2800 </b> <br> <br>
-    
-<!-- <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"> </script> -->
+    <h2>Republican Delegates by State</h2>
+    <b>Total Delegates: 2763</b> <br>
+    <b>Key: Allotted = red, unallocated = pink</b>
 
-<!--
-<script>
-  var f = d3.scale.linear()
-  .domain([0, d3.max(data)]
-  .range([0, 420]));
-  
-  var data = [1,139, 825, 673, 410, 169, 143];
-  
-  d3.select(".chart")
-  .selectAll("div")
-  .data(data)
-  .enter().append("div")
-  .style("width", function(d) {
-  return d*10+"px";
-  })
-  .text(function(d) { return d; });
-  
-</script>
--->
+    <div class='rallotted'>
+    </div>
+
+    <div class='runallocated'>
+    </div>
 
   </body>
-  
-<!-- D3 console commands for reference 
 
-var data = [4, 8, 15, 16, 23, 42];
-
-d3.select(".chart")
-.selectAll("div")
-.data(data)
-.enter().append("div")
-.style("width", function(d)) {
-return d*10 + "px"; })
-.text(function(d) { return d; });
-
--->
-  
-</html>
+  <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
+  <script src='./index.js'></script>
