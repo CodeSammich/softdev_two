@@ -61,6 +61,7 @@ d3.select('.unallocated')
     })
     .text(function(d) {return d;});
 
+
 d3.select('.rallotted')
     .selectAll('div')
     .data(rallotted)
@@ -78,3 +79,28 @@ d3.select('.runallocated')
 	return g(d[1]) * 10 + 'px';
     })
     .text(function(d) {return d;});
+
+var party = "democrats";
+var democrats = document.getElementById("democrats");
+var republicans = document.getElementById("republicans");
+
+if( party == "democrats" )
+    democrats.onclick = function() {
+	console.log("clicked democrats");
+	
+	democrats.style.display = "none";
+	republicans.style.display = "block";
+	
+	party = "republicans";
+	return true;
+    }
+else if( party == "republicans" )
+    republicans.onclick = function() {
+	console.log("clicked republicans");
+	
+	    republicans.style.display = "none";
+	democrats.style.display = "block";
+	
+	    party = "democrats";
+	return true;
+    }    
