@@ -85,22 +85,29 @@ var democrats = document.getElementById("democrats");
 var republicans = document.getElementById("republicans");
 
 if( party == "democrats" )
-    democrats.onclick = function() {
-	console.log("clicked democrats");
-	
-	democrats.style.display = "none";
+
+    window.onload = function() {
+	democrats.onclick = function() {
+	    console.log("clicked democrats");
+	    
+	    democrats.style.display = "none";
 	republicans.style.display = "block";
-	
-	party = "republicans";
-	return true;
+	    
+	    party = "republicans";
+	    return true;
+	}
     }
 else if( party == "republicans" )
-    republicans.onclick = function() {
-	console.log("clicked republicans");
-	
+    window.onload = function() {
+    
+	republicans.onclick = function() {
+	    console.log("clicked republicans");
+	    
 	    republicans.style.display = "none";
-	democrats.style.display = "block";
-	
+	    democrats.style.display = "block";
+	    
 	    party = "democrats";
-	return true;
-    }    
+	    return true;
+	}    
+    }
+	
