@@ -81,33 +81,38 @@ d3.select('.runallocated')
     .text(function(d) {return d;});
 
 var party = "democrats";
+
+console.log(document.getElementById("democrats") )
+console.log(document.getElementById("republicans") )
+
 var democrats = document.getElementById("democrats");
 var republicans = document.getElementById("republicans");
 
-if( party == "democrats" )
+//Democrats
+democrats.style.cursor = "pointer";
 
-    window.onload = function() {
-	democrats.onclick = function() {
-	    console.log("clicked democrats");
-	    
-	    democrats.style.display = "none";
-	republicans.style.display = "block";
-	    
-	    party = "republicans";
-	    return true;
-	}
-    }
-else if( party == "republicans" )
-    window.onload = function() {
+democrats.onclick = function() {
+    console.log("clicked democrats");
     
-	republicans.onclick = function() {
-	    console.log("clicked republicans");
-	    
-	    republicans.style.display = "none";
+    democrats.style.display = "none";
+    republicans.style.display = "block";
+    
+    party = "republicans";
+    return true;
+}
+
+//Republicans
+republicans.style.cursor = "pointer";
+
+republicans.onclick = function() {
+    console.log("clicked republicans");
+    
+    republicans.style.display = "none";
 	    democrats.style.display = "block";
-	    
+    
 	    party = "democrats";
-	    return true;
-	}    
-    }
-	
+    return true;
+}    
+
+
+

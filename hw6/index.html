@@ -1,5 +1,6 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 
+<html>
   <head>
     <meta charset='utf-8'>
     <link rel='stylesheet' type='text/css' href='./css/style.css'>
@@ -7,7 +8,8 @@
   </head>
 
   <body>
-    <div class="democrats">
+    
+    <div class="democrats" id="democrats">
       <h1>Democratic Delegates by State</h1>
       <b>Total Delegates: 4,763</b> <br>
       <b>Key: Allotted = steel blue, unallocated = blue</b>
@@ -19,7 +21,7 @@
       </div>
     </div>
 
-    <div class="republicans">
+    <div class="republicans" id="republicans">
       <h2>Republican Delegates by State</h2>
       <b>Total Delegates: 2763</b> <br>
       <b>Key: Allotted = red, unallocated = pink</b>
@@ -31,8 +33,11 @@
       </div>
     </div>
 
+    <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
+    <script src="index.js"></script>
+    
   </body>
 
-  <script src='https://d3js.org/d3.v3.min.js' charset='utf-8'></script>
-  <script src='./index.js'></script>
+</html>
+
     
