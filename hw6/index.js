@@ -94,11 +94,11 @@ democrats.style.cursor = "pointer";
 democrats.onclick = function() {
     console.log("clicked democrats");
     
-    d3.select("democrats").transition().style.display = "none"; 
-    d3.select("republicans").transition().style.display = "block";
+  /*  d3.select("democrats").transition().style.display = "none"; 
+    d3.select("republicans").transition().style.display = "block"; */
 
-    //democrats.style.display = "none";
-    //republicans.style.display = "block";
+    democrats.style.display = "none";
+   republicans.style.display = "block";
         
     party = "republicans";
     return true;
@@ -110,11 +110,11 @@ republicans.style.cursor = "pointer";
 republicans.onclick = function() {
     console.log("clicked republicans");
     
-    d3.select("republicans").transition().style.display = "none"; 
-    d3.select("democrats").transition().style.display = "block";
+/*    d3.select("republicans").transition().style.display = "none"; 
+    d3.select("democrats").transition().style.display = "block"; */
     
-//    republicans.style.display = "none";
-  //  democrats.style.display = "block";
+    republicans.style.display = "none";
+    democrats.style.display = "block";
     
 	    party = "democrats";
     return true;
