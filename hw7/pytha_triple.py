@@ -1,3 +1,5 @@
+from random import randint
+
 def pt(n):
     triples = []
     for a in xrange(1, n):
@@ -24,16 +26,31 @@ def quickSort(nums):
     ###    *all values > p are upper-half
     ###    *pivot will be in the final resting position
     ###    *recursion!
+
+    if( len(nums) < 1 ):
+        return nums
     
     pivot = len(nums) / 2
     smaller = []
     larger = []
-    for x in xrange(nums):
-        if x < nums:
-            smaller.append( x )
-        else:
-            larger.append( x )
-    
 
-print pt(25)
-print pt2(25)
+    for x in nums:
+        if( x < nums[pivot] ):
+            smaller.append(x)
+        else:
+            larger.append(x)
+    
+    return quickSort(smaller) + quickSort(larger)
+
+#print pt(25)
+#print pt2(25)
+
+test = []
+for i in range(0, 3):
+    test.append( randint(0,10) )
+
+print "Unsorted test array: " + str(test)
+test = quickSort(test)
+print "Sorted test array: " + str(test)
+    
+    
